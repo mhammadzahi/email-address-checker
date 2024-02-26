@@ -8,7 +8,7 @@ def verify_email_smtp(email_address):
         #smtp.connect()
         #smtp.helo()
 
-        smtp.login('j95016576@gmail.com', 'lhecdefrsucufc')
+        smtp.login('yyy@gmail.com', 'lhwswswsswsswsswswsswsc')
         smtp.mail('mohamedzahi678@gmail.com')
         #smtp.mail('j95016576@gmail.com')
 
