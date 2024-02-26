@@ -8,7 +8,7 @@ def verify_email_smtp(email_address):
         #smtp.connect()
         #smtp.helo()
 
-        smtp.login('j95016576@gmail.com', 'lheclplaguoucufc')
+        smtp.login('j95016576@gmail.com', 'lhecdefrsucufc')
         smtp.mail('mohamedzahi678@gmail.com')
         #smtp.mail('j95016576@gmail.com')
 
@@ -16,5 +16,5 @@ def verify_email_smtp(email_address):
         #return response_code == 250
         #print(response_code)
   
-verify_email_smtp('infsao@pentame.com')
+verify_email_smtp('info@pentame.com')
   
