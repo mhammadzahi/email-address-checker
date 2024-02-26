@@ -13,7 +13,7 @@ async function readEmailsFromFile(fileName){
 
 
 const blackListedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com'];
-const blackListedExtensions = ['.in', '.pk'];
+const blackListedExtensions = ['.in', '.pk', '.lk', 'np'];
 async function checkDNS(domain){
     return new Promise((resolve, reject) => {
         dns.resolveMx(domain, (err, addresses) => {
