@@ -56,9 +56,9 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    validateAllEmails('all_uae_sent_weekend.txt').then(validEmails => {
+    validateAllEmails('tech-uae.txt').then(validEmails => {
         console.log(validEmails.length);
-        fs2.writeFileSync('check_1_all_uae_sent_weekend.txt', validEmails.join('\n'), 'utf8');
+        fs2.writeFileSync('checked_tech-uae.txt', validEmails.join('\n'), 'utf8');
 
     })
 })();
