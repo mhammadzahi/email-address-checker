@@ -56,7 +56,7 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = ''
+    input = 'real_estet_KSA.txt'
     output = 'checked_' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
