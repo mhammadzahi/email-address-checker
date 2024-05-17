@@ -3,6 +3,7 @@ const dns = require('dns');
 const fs = require('fs').promises;
 const fs2 = require('fs');
 
+let i = 1;
 
 async function readEmailsFromFile(fileName){
     const data = await fs.readFile(fileName, 'utf8');
@@ -49,6 +50,10 @@ async function validateAllEmails(emailsListFile){
         }
         else
             inValids.push(email);
+
+
+        console.log(i);
+        i = i + 1;
     }
 
     return valids;
@@ -56,8 +61,8 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'all_uae_sent_weekend.txt'
-    output = '_7_checked_' + input
+    input = 'usa_dev.txt'
+    output = '__checked__' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
         fs2.writeFileSync(output, validEmails.join('\n'), 'utf8');
