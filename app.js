@@ -14,7 +14,8 @@ async function readEmailsFromFile(fileName){
 
 
 const blackListedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com'];
-const blackListedExtensions = ['.in', '.pk', '.lk', 'np'];
+//const blackListedExtensions = ['.in', '.pk', '.lk', 'np'];
+
 async function checkDNS(domain){
     return new Promise((resolve, reject) => {
         dns.resolveMx(domain, (err, addresses) => {
@@ -61,8 +62,8 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'dev_uk.txt'
-    output = '_fix_checked__' + input
+    input = 'abderezzak.txt'
+    output = 'checked__' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
         fs2.writeFileSync(output, validEmails.join('\n'), 'utf8');
