@@ -12,8 +12,8 @@ async function readEmailsFromFile(fileName){
     return validEmailsArray;
 }
 
-
-const blackListedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com'];
+const blackListedDomains = ['gmaillll.com'];// switch between these
+//const blackListedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com'];
 //const blackListedExtensions = ['.in', '.pk', '.lk', 'np'];
 
 async function checkDNS(domain){
@@ -62,7 +62,7 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'abderezzak.txt'
+    input = 'data__600_.txt'
     output = 'checked__' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
