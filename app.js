@@ -62,8 +62,8 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'qa.txt'
-    output = 'checked_' + input
+    input = 'germany.txt'
+    output = '_checked_' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
         fs2.writeFileSync(output, validEmails.join('\n'), 'utf8');
