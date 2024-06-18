@@ -62,7 +62,7 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'germany.txt'
+    input = 'usa.txt'
     output = '_checked_' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
