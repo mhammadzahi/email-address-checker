@@ -15,7 +15,7 @@ async function readEmailsFromFile(fileName){
 const blackListedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'domain.com', 'mail.com'];
 //const blackListedExtensions = ['in', 'pk', 'lk', 'np'];
 
-async function checkDNS(domain){
+async function checkDNS(domain){// also check if start with '%'
     return new Promise((resolve, reject) => {
         dns.resolveMx(domain, (err, addresses) => {
             if(err || blackListedDomains.includes(domain)){
@@ -61,7 +61,7 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'usa.txt'
+    input = 'austria.txt'
     output = 'checked_' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
