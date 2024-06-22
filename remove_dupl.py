@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('checked_estonia.txt')
+remove_duplicates('swiss.txt')
