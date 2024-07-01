@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('ma.txt')
+remove_duplicates('uae_dev_.txt')
