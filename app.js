@@ -12,7 +12,7 @@ async function readEmailsFromFile(fileName){
     return validEmailsArray;
 }
 
-const blackListedDomains = ['google.com', 'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'domain.com', 'mail.com', 'email.com'];
+const blackListedDomains = ['domaine.com', 'sentry.io', 'yoursite.com', 'address.com', 'google.com', 'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'domain.com', 'mail.com', 'email.com'];
 //const blackListedExtensions = ['in', 'pk', 'lk', 'np'];
 
 async function checkDNS(domain){// also check if start with '%'
@@ -61,7 +61,7 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'cleaned_uae_dev_.txt'
+    input = 'cleaned_50_cities.txt'
     output = 'checked_' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
