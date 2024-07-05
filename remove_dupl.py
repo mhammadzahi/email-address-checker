@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('real_estates_midle_east.txt')
+remove_duplicates('oil_gas_trad_uae.txt')
