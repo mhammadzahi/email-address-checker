@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('cleaned_50_eu_cities.txt')
+remove_duplicates('real_estates_midle_east.txt')
