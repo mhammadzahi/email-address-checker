@@ -61,7 +61,7 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'hotels.txt'
+    input = 'silicon_oasis.txt'
     output = 'checked_' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
