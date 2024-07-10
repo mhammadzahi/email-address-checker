@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('checked_oman_dev_.txt')
+remove_duplicates('checked_hotels.txt')
