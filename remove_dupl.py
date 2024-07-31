@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('checked_silicon_oasis.txt')
+remove_duplicates('data-comp1.txt')
