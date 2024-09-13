@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('data-comp1.txt')
+remove_duplicates('checked_uae_all_.txt')
