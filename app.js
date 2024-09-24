@@ -12,7 +12,7 @@ async function readEmailsFromFile(fileName){
     return validEmailsArray;
 }
 
-const blackListedDomains = ['mysite.com', 'miramar-uae.com', 'icloud.com', 'host.com', 'website.com', 'domaine.com', 'sentry.io', 'yoursite.com', 'address.com', 'google.com', 'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'domain.com', 'mail.com', 'email.com', 'example.com'];
+const blackListedDomains = ['yourmail.com', 'mysite.com', 'miramar-uae.com', 'icloud.com', 'host.com', 'website.com', 'domaine.com', 'sentry.io', 'yoursite.com', 'address.com', 'google.com', 'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'domain.com', 'mail.com', 'email.com', 'example.com'];
 //const blackListedExtensions = ['in', 'pk', 'lk', 'np'];
 
 async function checkDNS(domain){// also check if start with '%'
@@ -67,8 +67,8 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'uae_all_.txt'
-    output = 'checked_' + input
+    input = '__uae__best__.txt'
+    output = 'checked__' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
         fs2.writeFileSync(output, validEmails.join('\n'), 'utf8');
