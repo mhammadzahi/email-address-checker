@@ -12,7 +12,7 @@ async function readEmailsFromFile(fileName){
     return validEmailsArray;
 }
 
-const blackListedDomains = ['yourmail.com', 'mysite.com', 'miramar-uae.com', 'icloud.com', 'host.com', 'website.com', 'domaine.com', 'sentry.io', 'yoursite.com', 'address.com', 'google.com', 'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'domain.com', 'mail.com', 'email.com', 'example.com'];
+const blackListedDomains = ['doe.com', 'yourmail.com', 'mysite.com', 'miramar-uae.com', 'icloud.com', 'host.com', 'website.com', 'domaine.com', 'sentry.io', 'yoursite.com', 'address.com', 'google.com', 'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'domain.com', 'mail.com', 'email.com', 'example.com'];
 //const blackListedExtensions = ['in', 'pk', 'lk', 'np'];
 
 async function checkDNS(domain){// also check if start with '%'
@@ -29,7 +29,7 @@ async function checkDNS(domain){// also check if start with '%'
 }
 
 async function validateEmail(email){
-    if(email.startsWith('%') || email.startsWith('+') || email.endsWith('.in')){
+    if(email.startsWith('u00') || email.startsWith('%') || email.startsWith('+') || email.endsWith('.in')){
         return false;
     }
     else{
@@ -67,7 +67,7 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = '__uae__best__.txt'
+    input = 'uae.txt'
     output = 'checked__' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
