@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('uae__not_yet_clean.txt')
+remove_duplicates('_checked_uk.txt')
