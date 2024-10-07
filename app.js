@@ -67,7 +67,7 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'cleaned_europ.txt'//mberatungneu1@bechtle365.onmicrosoft.com
+    input = 'cleaned_ma____.txt'//mberatungneu1@bechtle365.onmicrosoft.com
     output = '_checked_' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);

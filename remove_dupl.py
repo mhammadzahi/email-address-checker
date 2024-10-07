@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('gcc.txt')
+remove_duplicates('ma____.txt')
