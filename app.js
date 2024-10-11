@@ -29,7 +29,7 @@ async function checkDNS(domain){// also check if start with '%'
 }
 
 async function validateEmail(email){
-    if(email.startsWith('u00') || email.startsWith('%') || email.startsWith('+') || email.endsWith('.in')){
+    if(email.startsWith('u00') || email.startsWith('%') || email.startsWith('+') || email.endsWith('.in') || email.endsWith('onmicrosoft.com')){
         return false;
     }
     else{
@@ -61,13 +61,13 @@ async function validateAllEmails(emailsListFile){
         console.log(i);
         i = i + 1;
     }
-
+    console.log(inValids);
     return valids;
 }
 
 //call main
 (async () => {
-    input = 'cleaned_ma____.txt'//mberatungneu1@bechtle365.onmicrosoft.com
+    input = 'usa_14k_.txt'
     output = '_checked_' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
