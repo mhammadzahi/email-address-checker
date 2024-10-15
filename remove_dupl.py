@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('morocco_naad_canadi.txt')
+remove_duplicates('_checked_ma__original.txt')
