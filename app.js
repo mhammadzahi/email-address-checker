@@ -29,7 +29,7 @@ async function checkDNS(domain){// also check if start with '%'
 }
 
 async function validateEmail(email){
-    if(email.startsWith('u00') || email.startsWith('%') || email.startsWith('+') || email.endsWith('.in') || email.endsWith('onmicrosoft.com')){
+    if(email.startsWith('u00') || email.startsWith('%') || email.startsWith('+') || email.endsWith('.in') || email.endsWith('.avif') || email.endsWith('onmicrosoft.com')){
         return false;
     }
     else{
@@ -67,7 +67,7 @@ async function validateAllEmails(emailsListFile){
 
 //call main
 (async () => {
-    input = 'japan.txt'
+    input = '_50_europ_cities_.txt'
     output = '_checked_' + input
     validateAllEmails(input).then(validEmails => {
         console.log(validEmails.length);
