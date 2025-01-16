@@ -11,4 +11,4 @@ def remove_duplicates(filename):
 
 
 
-remove_duplicates('_checked__50_europ_cities_.txt')
+remove_duplicates('_checked_ae_soft_dev.txt')
