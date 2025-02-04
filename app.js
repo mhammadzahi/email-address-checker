@@ -2,6 +2,7 @@ const validator = require("email-validator");
 const dns = require('dns');
 const fs = require('fs').promises;
 const fs2 = require('fs');
+const path = require('path');
 
 let i = 1;
 
@@ -65,12 +66,36 @@ async function validateAllEmails(emailsListFile){
     return valids;
 }
 
-//call main
+
+
+
+
+// Call main
 (async () => {
-    input = 'ae_soft_dev.txt'
-    output = '_checked_' + input
-    validateAllEmails(input).then(validEmails => {
-        console.log(validEmails.length);
+    const inputFiles = [
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_all-factories-octoparse1.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_oil-gcc-octoparse.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_usa-real-estate.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse-2.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_all-factories-octoparse.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-eu-octoparse.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_real-estates-gcc.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_fact-oil-gas-octoparse.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_gcc-fintech.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse-2-3.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_germany-67K.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_germany-67K-3.txt',
+        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-gcc-octoparse.txt'
+    ];
+
+    await Promise.all(inputFiles.map(async (input) => {
+        const filename = path.basename(input); // Extracts just the filename
+        const output = path.join(path.dirname(input), 'checked____' + filename); // Creates output file in the same directory
+
+        const validEmails = await validateAllEmails(input);
         fs2.writeFileSync(output, validEmails.join('\n'), 'utf8');
-    })
+        console.log(`Processed ${input}: ${validEmails.length} valid emails`);
+    }));
 })();
+

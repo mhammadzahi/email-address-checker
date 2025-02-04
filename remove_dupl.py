@@ -1,14 +1,25 @@
-def remove_duplicates(filename):
-    with open(filename, 'r') as file:
-        emails = file.readlines()
+import os
 
-    
-    unique_emails = set(email.lower().strip() for email in emails)
+def remove_duplicates(filenames):
+    for filename in filenames:
+        with open(filename, 'r') as file:
+            emails = file.readlines()
 
-    with open('cleaned_' + filename, 'w') as file:
-        for email in unique_emails:
-            file.write(email + '\n')
+        unique_emails = set(email.lower().strip() for email in emails)
+
+        output_filename = os.path.join(os.path.dirname(filename), 'clean____' + os.path.basename(filename))
+
+        with open(output_filename, 'w') as file:
+            for email in unique_emails:
+                file.write(email + '\n')
+
+        print(f"Processed {filename}: {len(unique_emails)} unique emails saved to {output_filename}")
 
 
 
-remove_duplicates('_checked_ae_soft_dev.txt')
+file_list = [
+    'C:/Users/HP/Desktop/Python/Python-Projects/Emails/emails1.txt',
+]
+
+
+remove_duplicates(file_list)
