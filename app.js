@@ -14,7 +14,14 @@ async function readEmailsFromFile(fileName){
 }
 
 const blackListedDomains = ['doe.com', 'yourmail.com', 'mysite.com', 'miramar-uae.com', 'icloud.com', 'host.com', 'website.com', 'domaine.com', 'sentry.io', 'yoursite.com', 'address.com', 'google.com', 'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'domain.com', 'mail.com', 'email.com', 'example.com'];
-//const blackListedExtensions = ['in', 'pk', 'lk', 'np'];
+const badReputationExtensions = [
+    '.xyz', '.top', '.club', '.online', '.site', '.biz', '.info', '.pw', '.work', '.click', 
+    '.live', '.fun', '.win', '.loan', '.men', '.stream', '.download', '.review', '.party', 
+    '.trade', '.date', '.gdn', '.science', '.racing', '.accountant', '.faith', '.webcam',
+    '.cn', '.ru', '.su', '.tk', '.ml', '.ga', '.cf', '.gq', '.ws', '.in', '.pk', '.lk', '.np',
+    '.bet', '.guru', '.casino', '.money', '.win', '.finance', '.investments', '.exchange',
+    '.zip', '.mov', '.cam', '.bar', '.rest', '.host', '.press', '.bid', '.free', '.space', '.stream'
+];
 
 async function checkDNS(domain){// also check if start with '%'
     return new Promise((resolve, reject) => {
@@ -30,8 +37,12 @@ async function checkDNS(domain){// also check if start with '%'
 }
 
 async function validateEmail(email){
-    if(email.startsWith('exemple') || email.startsWith('u00') || email.startsWith('%') || email.startsWith('+') || email.endsWith('.in') || email.endsWith('.avif') || email.endsWith('onmicrosoft.com')){
+    if(email.startsWith('exemple') || email.startsWith('u00') || email.startsWith('%') || email.startsWith('+') || email.endsWith('.avif') || email.endsWith('onmicrosoft.com')){
         return false;
+    }
+    if (badReputationExtensions.some(ext => email.endsWith(ext))) {
+        console.log(email);
+        return false; 
     }
     else{
         if(validator.validate(email)){
@@ -73,20 +84,11 @@ async function validateAllEmails(emailsListFile){
 // Call main
 (async () => {
     const inputFiles = [
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_all-factories-octoparse1.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_oil-gcc-octoparse.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_usa-real-estate.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse-2.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_all-factories-octoparse.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-eu-octoparse.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_real-estates-gcc.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_fact-oil-gas-octoparse.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_gcc-fintech.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse-2-3.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_germany-67K.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_germany-67K-3.txt',
-        '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-gcc-octoparse.txt'
+        '/home/mohammad/Desktop/email-address-checker/riyadh-jeddah-soft-dev.txt'
+        // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_all-factories-octoparse1.txt',
+        // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse.txt',
+        // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_oil-gcc-octoparse.txt',
+        // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_usa-real-estate.txt'
     ];
 
     await Promise.all(inputFiles.map(async (input) => {

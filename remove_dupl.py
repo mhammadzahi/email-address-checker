@@ -18,7 +18,7 @@ def remove_duplicates(filenames):
 
 
 file_list = [
-    'C:/Users/HP/Desktop/Python/Python-Projects/Emails/emails1.txt',
+    '/home/mohammad/Desktop/email-address-checker/checked____riyadh-jeddah-soft-dev.txt'
 ]
 
 
