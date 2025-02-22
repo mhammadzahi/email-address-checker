@@ -18,7 +18,7 @@ const badReputationExtensions = [
     '.xyz', '.top', '.club', '.online', '.site', '.biz', '.info', '.pw', '.work', '.click', 
     '.live', '.fun', '.win', '.loan', '.men', '.stream', '.download', '.review', '.party', 
     '.trade', '.date', '.gdn', '.science', '.racing', '.accountant', '.faith', '.webcam',
-    '.cn', '.ru', '.su', '.tk', '.ml', '.ga', '.cf', '.gq', '.ws', '.in', '.pk', '.lk', '.np',
+    '.cn', '.ru', '.su', '.tk', '.ml', '.ga', '.cf', '.gq', '.ws', '.br', '.in', '.pk', '.lk', '.np',
     '.bet', '.guru', '.casino', '.money', '.win', '.finance', '.investments', '.exchange',
     '.zip', '.mov', '.cam', '.bar', '.rest', '.host', '.press', '.bid', '.free', '.space', '.stream'
 ];
@@ -27,7 +27,6 @@ async function checkDNS(domain){// also check if start with '%'
     return new Promise((resolve, reject) => {
         dns.resolveMx(domain, (err, addresses) => {
             if(err || blackListedDomains.includes(domain)){
-                //console.log(domain);
                 resolve(false);
             }
             else
@@ -84,7 +83,7 @@ async function validateAllEmails(emailsListFile){
 // Call main
 (async () => {
     const inputFiles = [
-        '/home/mohammad/Desktop/email-address-checker/riyadh-jeddah-soft-dev.txt'
+        '/home/mohammad/Desktop/email-address-checker/real-estate-sa.txt'
         // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_all-factories-octoparse1.txt',
         // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse.txt',
         // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_oil-gcc-octoparse.txt',

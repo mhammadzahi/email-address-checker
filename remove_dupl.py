@@ -18,7 +18,7 @@ def remove_duplicates(filenames):
 
 
 file_list = [
-    '/home/mohammad/Desktop/email-address-checker/checked____riyadh-jeddah-soft-dev.txt'
+    '/home/mohammad/Desktop/email-address-checker/oo___real-estate-sa.txt'
 ]
 
 
