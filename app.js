@@ -83,7 +83,7 @@ async function validateAllEmails(emailsListFile){
 // Call main
 (async () => {
     const inputFiles = [
-        '/home/mohammad/Desktop/email-address-checker/real-estate-sa.txt'
+        '/home/mohammad/Desktop/email-address-checker/gcc.txt'
         // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_all-factories-octoparse1.txt',
         // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse.txt',
         // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_oil-gcc-octoparse.txt',
