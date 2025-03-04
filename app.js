@@ -15,11 +15,12 @@ async function readEmailsFromFile(fileName){
 
 const blackListedDomains = ['doe.com', 'yourmail.com', 'mysite.com', 'miramar-uae.com', 'icloud.com', 'host.com', 'website.com', 'domaine.com', 'sentry.io', 'yoursite.com', 'address.com', 'google.com', 'gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'domain.com', 'mail.com', 'email.com', 'example.com'];
 const badReputationExtensions = [
-    '.xyz', '.top', '.club', '.online', '.site', '.biz', '.info', '.pw', '.work', '.click', 
+    '.xyz', '.top', '.club', '.online', '.site', '.biz', '.info', '.pw', '.work', '.click', '.no',
+    '.vip', '.cloud', '.life', '.today', '.live', '.fun', '.win', 
     '.live', '.fun', '.win', '.loan', '.men', '.stream', '.download', '.review', '.party', 
     '.trade', '.date', '.gdn', '.science', '.racing', '.accountant', '.faith', '.webcam',
     '.cn', '.ru', '.su', '.tk', '.ml', '.ga', '.cf', '.gq', '.ws', '.br', '.in', '.pk', '.lk', '.np',
-    '.bet', '.guru', '.casino', '.money', '.win', '.finance', '.investments', '.exchange',
+    '.bet', '.guru', '.casino', '.money', '.win', '.finance', '.investments', '.exchange', '.pro',
     '.zip', '.mov', '.cam', '.bar', '.rest', '.host', '.press', '.bid', '.free', '.space', '.stream'
 ];
 
@@ -83,7 +84,8 @@ async function validateAllEmails(emailsListFile){
 // Call main
 (async () => {
     const inputFiles = [
-        '/home/mohammad/Desktop/email-address-checker/gcc.txt'
+        '/home/mohammad/Desktop/email-address-checker/soft-dev-irland.txt',
+        '/home/mohammad/Desktop/email-address-checker/soft-dev-uae.txt'
         // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_all-factories-octoparse1.txt',
         // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_it-usa-octoparse.txt',
         // '/home/mohammad/Desktop/email-address-checker/octoparse-data/txt/cleaned_oil-gcc-octoparse.txt',
